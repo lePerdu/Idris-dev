@@ -263,9 +263,9 @@ declare t xs = dec' t xs [] where
 
 genArgs i = sMN i "P_c" : genArgs (i + 1)
 
-mkFnCon    n = sMN 0 ("P_" ++ show n)
+mkFnCon    n = sMN 0 ("P_" ++ showCG n)
 mkUnderCon n 0       = n
-mkUnderCon n missing = sMN missing ("U_" ++ show n)
+mkUnderCon n missing = sMN missing ("U_" ++ showCG n)
 
 instance Show DExp where
    show e = show' [] e where
